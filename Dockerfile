@@ -10,15 +10,12 @@ RUN apt-get update && apt-get install -y curl wget
 
 RUN wget https://github.com/kelseyhightower/confd/releases/download/v0.16.0/confd-0.16.0-linux-amd64 && \
     mkdir -p /opt/confd/bin && \
-    mv confd-0.16.0-linux-amd64 /opt/confd/bin/confd && \
-    chmod +x /opt/confd/bin/confd && \
-    export PATH="$PATH:/opt/confd/bin"
-
-RUN wget https://storage.googleapis.com/kubernetes-helm/helm-v2.11.0-linux-arm64.tar.gz && \
+    mv confd-0.16.0-linux-amd64 /usr/local/sbin/confd && \
+    chmod +x /usr/local/sbin/confd && \
+    wget https://storage.googleapis.com/kubernetes-helm/helm-v2.11.0-linux-amd64.tar.gz && \
     tar -xvf helm-v2.11.0-linux-arm64.tar.gz && \
     mkdir -p /opt/helm/bin && \
-    mv linux-arm64/helm /opt/helm/bin/helm && \
-    chmod +x /opt/helm/bin/helm && \
-    export PATH="$PATH:/opt/helm/bin"
+    mv linux-arm64/helm /usr/local/sbin/helm && \
+    chmod +x /usr/local/sbin/helm 
 
 CMD ["/bin/bash"]
