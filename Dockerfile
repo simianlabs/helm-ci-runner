@@ -16,6 +16,7 @@ RUN wget https://github.com/kelseyhightower/confd/releases/download/v0.16.0/conf
     tar -xvf helm-v2.11.0-linux-amd64.tar.gz && \
     mkdir -p /opt/helm/bin && \
     mv linux-amd64/helm /usr/local/sbin/helm && \
-    chmod +x /usr/local/sbin/helm 
+    chmod +x /usr/local/sbin/helm && \
+    apt-get install -y git
 
 CMD ["/bin/bash"]
