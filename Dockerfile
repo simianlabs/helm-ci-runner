@@ -1,6 +1,7 @@
 FROM ubuntu:16.04
 
-RUN apt-get update && apt-get install -y curl wget 
+RUN apt-get update && apt-get install -y curl wget && \
+    echo 'Acquire::https::packages.cloud.google.com::Verify-Peer "false";' > /etc/apt/apt.conf
 
 RUN curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -  && \
     echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" > /etc/apt/sources.list.d/kubernetes.list && \
