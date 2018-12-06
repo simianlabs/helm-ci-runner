@@ -1,8 +1,8 @@
 FROM ubuntu:16.04
 
 RUN apt-get update && apt-get install -y curl wget && \
-    curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -  && \
-    echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list && \
+    curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -  && \
+    echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | tee -a /etc/apt/sources.list.d/kubernetes.list && \
     apt-get update && \
     apt-get install -y kubectl && \
     wget https://github.com/kelseyhightower/confd/releases/download/v0.16.0/confd-0.16.0-linux-amd64 && \
