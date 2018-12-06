@@ -13,7 +13,7 @@ RUN wget https://github.com/kelseyhightower/confd/releases/download/v0.16.0/conf
     mv confd-0.16.0-linux-amd64 /usr/local/sbin/confd && \
     chmod +x /usr/local/sbin/confd && \
     wget https://storage.googleapis.com/kubernetes-helm/helm-v2.11.0-linux-amd64.tar.gz && \
-    tar -xvf helm-v2.11.0-linux-arm64.tar.gz && \
+    tar -xvf helm-v2.11.0-linux-amd64.tar.gz && \
     mkdir -p /opt/helm/bin && \
     mv linux-arm64/helm /usr/local/sbin/helm && \
     chmod +x /usr/local/sbin/helm 
