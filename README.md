@@ -1,1 +1,7 @@
-# helm-ci-runner
+# Helm runner
+
+Installed:
+
+* kubectl
+* confd
+* helm
